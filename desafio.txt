@@ -1,0 +1,31 @@
+Desafio Técnico PHP
+
+Desenvolva um programa para um mercado que permita:
+· O cadastro dos produtos;
+· Dos tipos de cada produto;
+· Dos valores percentuais de imposto dos tipos de produtos;
+· A tela de venda;
+· Onde será informado os produtos e quantidades adquiridos;
+· O sistema deve apresentar o valor de cada item multiplicado pela quantidade
+adquirida e a quantidade pago de imposto em cada item, um totalizador do valor da
+compra e um totalizador do valor dos impostos.
+O sistema deve ser desenvolvido utilizando:
+· PHP 7.4
+· PostgreSQL versão 9.4
+Você deve usar o servidor nativo do PHP usando o comando php -S localhost:8080 na
+raiz web do seu projeto, mas se precisarmos fazer alguma coisa além de iniciar o
+servidor, nos ensine como para que possamos fazer o seu projeto funcionar
+corretamente.
+Nesse desafio também queremos te incentivar a demonstrar seus conhecimentos
+técnicos além de cumprir o objetivo inicial que é desenvolver sistema do mercado com
+as regras apresentadas, se souber utilizar design patterns, testes unitários, nos mostre
+no código do mercado para que possamos conhecer melhor suas habilidade.
+Não queremos que você use um framework tipo o Laravel, Symfony, CodeIgniter
+porque eles resolvem a grande parte dos problemas que gostaríamos de ver como que
+você resolve. Mas, se quiser usar uma biblioteca ou outra para facilitar o
+desenvolvimento, não há problemas.
+Deverão ser enviados para análise:
+· Repositório no GitHub com acesso público para clonarmos o seu projeto;
+· O backup do banco de dados pode estar na raiz do repositório;
+* Para exportar o banco use o comando pg_dump;
+* Antes de nos enviar, faça um pg_restore para ver se foi tudo exportado como deveria.

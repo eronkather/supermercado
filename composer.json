@@ -12,6 +12,7 @@
     "require": {
         "php": "^7.4",
         "ext-pdo" : "*",
+        "ext-pgsql": "*",
         "coffeecode/datalayer" : "1.1.*",
         "coffeecode/router" : "1.0.*",
         "league/plates" : "v4.0.0-alpha",

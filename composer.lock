@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bd24c2ea16b4ca41921547f689c235a",
+    "content-hash": "781c9893a9658f0652b16f425de46de3",
     "packages": [
         {
             "name": "coffeecode/datalayer",
@@ -1958,7 +1958,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": "^7.4",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-pgsql": "*"
     },
     "platform-dev": []
 }
