@@ -15,12 +15,14 @@ $router->post("/store", "TaxController:store", "taxcontroller.store");
 $router->delete("/delete", "TaxController:delete", "taxcontroller.delete");
 $router->patch("/store", "TaxController:store", "taxcontroller.store");
 
-//print_r($router);exit;
+
+$router->group("ops");
+$router->get("/{errcode}", "WebController:error");
 
 $router->dispatch();
 
 if ($router->error()) {
-    var_dump($router->error());
+    $route->redirect("/ops/{$router->error()}");
 }
 ?>
 

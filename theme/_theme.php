@@ -18,6 +18,19 @@
     </div>
 </div>
 
+<nav class="main_nav">
+    <?php if($v->section('sidebar')):
+            echo $v->section('sidebar');
+    else:
+        ?>
+            <a title="" href="<?=url();?>">Home</a>
+            <a title="" href="<?=url();?>">Impostos</a>
+            <a title="" href="<?=url();?>">Tipos de Produto</a>
+            <a title="" href="<?=url();?>">Venda</a>
+    <?php
+    endif;?>
+</nav>
+
 <main class="content">
     <?= $v->section("content"); ?>
 </main>

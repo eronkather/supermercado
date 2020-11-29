@@ -18,7 +18,7 @@ define("DATA_LAYER_CONFIG", [
 ]);
 
 
-function url(string $path): string
+function url(string $path=null): string
 {
     
     
