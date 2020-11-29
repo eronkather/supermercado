@@ -127,6 +127,19 @@ body {
     color: var(--color-green);
 }
 
+.error {
+    text-align: center;
+}
+
+.error h2 {
+    font-size: 3em;
+}
+
+.error p {
+    margin: 20px 0;
+    font-size: 1em;
+}
+
 .main_nav {
     padding: 20px;
     text-align: center;

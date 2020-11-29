@@ -23,10 +23,11 @@
             echo $v->section('sidebar');
     else:
         ?>
-            <a title="" href="<?=url();?>">Home</a>
-            <a title="" href="<?=url();?>">Impostos</a>
+            <a title="" href="<?=url();?>">Produtos</a>
+            <a title="" href="<?=url('/taxes');?>">Impostos</a>
             <a title="" href="<?=url();?>">Tipos de Produto</a>
             <a title="" href="<?=url();?>">Venda</a>
+            <a title="" href="<?=url('/teste');?>">Teste</a>
     <?php
     endif;?>
 </nav>
