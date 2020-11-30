@@ -1,24 +1,36 @@
-<?php $v->layout("_theme", ["title" => "Impostos"]); ?>
+<?php $v->layout("_theme", ["title" => "Tipo de Produtos"]); ?>
 
 <div class="create">
     <div class="form_ajax" style="display: none"></div>
-    <form class="form" name="tax" action="<?=$router->route('taxcontroller.store')?>" method="post"
+    <form class="form" name="tax" action="<?=$router->route('producttypecontroller.store')?>" method="post"
           enctype="multipart/form-data">
         <label>
-            <input type="text" name="description" placeholder="Descrição do Imposto:"/>
+            <input type="text" name="description" placeholder="Descrição do Tipo de Produto:"/>
         </label>
         <label>
-            <input type="number" step="0.01" name="percentage" placeholder="Porcentagem:"/>
+            <select class="select_tax" name="taxes_id" id="taxes_id">
+                <option value="">Selecione O Imposto</option>
+                <?php
+                    if($taxes):
+                        foreach($taxes as $tax):?>
+                            <option value=<?=$tax->id?>> <?=$tax->description?> </option>
+                        <?php endforeach;
+                    endif;?>        
+
+                    
+                ?>
+            </select>
         </label>
-        <button data-button='insert' data-id=''>Cadastrar Imposto</button>
+        
+        <button data-button='insert' data-id=''>Cadastrar Tipo de Produto</button>
     </form>
 </div>
 
 <section class="result">
     <?php 
-    if(!empty($taxes)):
-        foreach($taxes as $tax):    
-        $v->insert("tax/tax", ["tax"=>$tax]);
+    if(!empty($productTypes)):
+        foreach($productTypes as $prodtType):    
+        $v->insert("producttype/producttype", ["productType"=>$prodtType]);
         endforeach; 
     endif;
     ?>
@@ -44,12 +56,12 @@
             
             var form = $(this);
             var form_ajax = $('.form_ajax');
-            var taxes = $('.result');
+            var productTypes = $('.result');
             var dataButton = $('button').data();
 
             console.log(dataButton.id);
 
-            
+                console.log(form.serialize()+'&'+$.param({ 'id': dataButton.id }));
                 $.ajax({
                     type: dataButton.id?"PATCH":"POST",
                     url: form.attr('action'),
@@ -66,11 +78,12 @@
                                 $(this).html("");
                             });
                         }
-                        if(callback.tax){
+                        if(callback.productType){
                             if(dataButton.id){
-                                divUpdate.replaceWith(callback.tax);
+                                console.log(callback.productType);
+                                divUpdate.replaceWith(callback.productType);
                             } else{
-                                taxes.prepend(callback.tax);
+                                productTypes.prepend(callback.productType);
                             }
                             
                             form.each(function(){
@@ -81,10 +94,10 @@
                            // $('button').attr('data-id', '') ;
                            $('button').data('id','');
                            $('button').data('button','insert');
-                            $('button').html('Cadastrar Imposto');
+                            $('button').html('Cadastrar Tipo de Produto');
                             divUpdate = "";
                             
-                            $(this).html('Cadastrar Imposto');
+                            $(this).html('Cadastrar Tipo de Produto');
                         }
                     },
                     complete: function(){
@@ -102,14 +115,13 @@
             divUpdate = $(this).closest("article");
             var div = $(this).parent();
             var description = div.find('.description').text();
-            var percentage = div.find('.percentage').text();
+            var taxesid = div.find('.taxes_id').text();
             
             $('button').data('id',$(this).data('id'));
             $('button').data('button','update');            
-            $('button').html('Atualizar Imposto');
+            $('button').html('Atualizar Tipo de Produto');
             $("input[name=description]").val(description);
-            $("input[name=percentage]").val(parseInt(percentage));
-                        
+            $("select").val(parseInt(taxesid)).change();
         });
 
         $("body").on("click", "[data-action-delete]", function(e){
@@ -137,8 +149,6 @@
                     }
                 }
             });
-            
-        
 
         });
     })

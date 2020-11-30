@@ -16,17 +16,19 @@ $router->post("/taxes/store", "TaxController:store", "taxcontroller.store");
 $router->delete("/taxes/delete", "TaxController:delete", "taxcontroller.delete");
 $router->patch("/taxes/store", "TaxController:store", "taxcontroller.store");
 
+//Rotas dos Tipos de Produtos
+$router->get("/producttypes", "ProductTypeController:home", "producttypecontroller.home");
+$router->post("/producttypes/store", "ProductTypeController:store", "producttypecontroller.store");
+$router->delete("/producttypes/delete", "ProductTypeController:delete", "producttypecontroller.delete");
+$router->patch("/producttypes/store", "ProductTypeController:store", "producttypecontroller.store");
+
 
 //Trata os erros das rotas não implementadas
-
 $router->get("/ops/{errcode}", "WebController:error", 'webcontroller.error');
-
 $router->dispatch();
 
 if ($router->error()) {
-    
     $router->redirect("/ops/{$router->error()}");
-    
 }
 ?>
 
