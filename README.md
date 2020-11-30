@@ -29,7 +29,7 @@ psql -h localhost -U postgres -d supermercado < supermercado.backup
  
 
 
-## Como instalar e rodar os testes
+## Como os testes
 ```bash
 ./vendor/bin/phpunit --colors tests
 ```
