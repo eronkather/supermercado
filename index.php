@@ -22,6 +22,11 @@ $router->post("/producttypes/store", "ProductTypeController:store", "producttype
 $router->delete("/producttypes/delete", "ProductTypeController:delete", "producttypecontroller.delete");
 $router->patch("/producttypes/store", "ProductTypeController:store", "producttypecontroller.store");
 
+//Rotas dos Produtos
+$router->get("/products", "ProductController:home", "productcontroller.home");
+$router->post("/products/store", "ProductController:store", "productcontroller.store");
+$router->delete("/products/delete", "ProductController:delete", "productcontroller.delete");
+$router->patch("/products/store", "ProductController:store", "productcontroller.store");
 
 //Trata os erros das rotas não implementadas
 $router->get("/ops/{errcode}", "WebController:error", 'webcontroller.error');

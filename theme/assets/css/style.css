@@ -238,6 +238,9 @@ button:hover {
 .taxes_id{
     display: none !important;
 }
+.product_type_id{
+    display: none !important;
+}
 
 .result_tax {
     display: grid;
@@ -252,6 +255,18 @@ button:hover {
 }
 
 .result_product_type {
+    display: grid;
+    grid-template-columns: 500px 200px 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    background: #eeeeee;
+    border-radius: 4px;
+}
+
+.result_product {
     display: grid;
     grid-template-columns: 500px 200px 1fr 1fr;
     grid-column-gap: 20px;
