@@ -4,13 +4,16 @@ use CoffeeCode\Router\Router;
 
 require __DIR__ . "/vendor/autoload.php";
 
-
 $router = new Router(ROOT);
 
 $router->namespace("source\Controllers");
 
+
+//Rotas da página inicial
+$router->get("/shop", "ShopController:home", "shopcontroller.home");
+
 //Rotas dos Impostos
-$router->get("/", "TaxController:home", "taxcontroller.home");
+
 $router->get("/taxes", "TaxController:home", "taxcontroller.home");
 $router->post("/taxes/store", "TaxController:store", "taxcontroller.store");
 $router->delete("/taxes/delete", "TaxController:delete", "taxcontroller.delete");
@@ -27,6 +30,11 @@ $router->get("/products", "ProductController:home", "productcontroller.home");
 $router->post("/products/store", "ProductController:store", "productcontroller.store");
 $router->delete("/products/delete", "ProductController:delete", "productcontroller.delete");
 $router->patch("/products/store", "ProductController:store", "productcontroller.store");
+
+//Rotas da venda dos produtos
+$router->get("/shop", "ShopController:home", "shopcontroller.home");
+$router->post("/shop/checkout", "ShopController:checkout", "shopcontroller.checkout");
+
 
 //Trata os erros das rotas não implementadas
 $router->get("/ops/{errcode}", "WebController:error", 'webcontroller.error');

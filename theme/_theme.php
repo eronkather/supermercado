@@ -26,7 +26,7 @@
             <a title="" href="<?=url('/products');?>">Produtos</a>
             <a title="" href="<?=url('/taxes');?>">Impostos</a>
             <a title="" href="<?=url('/producttypes');?>">Tipos de Produto</a>
-            <a title="" href="<?=url('/sales');?>">Venda</a>
+            <a title="" href="<?=url('/shop');?>">Venda</a>
             
     <?php
     endif;?>

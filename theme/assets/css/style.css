@@ -37,6 +37,16 @@ body {
     z-index: 9;
 }
 
+.lista_produtos h3 input{
+    padding:10px;
+}
+
+.formProducts{
+    overflow: auto;
+}
+.list{
+    overflow: auto;
+}
 .ajax_load_box {
     margin: auto;
     text-align: center;
@@ -150,6 +160,10 @@ body {
     border-radius: 4px;
 }
 
+button:active{
+    background:  #00b895;
+}
+
 .main_nav a {
     display: inline-block;
     color: #ffffff;
@@ -163,7 +177,7 @@ body {
 }
 
 .main_nav a:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: #00b895;
 }
 
 .form {
@@ -266,9 +280,27 @@ button:hover {
     border-radius: 4px;
 }
 
+.main_nav a:active {
+    
+    color: #000000;
+    
+}
+
+form[name=product] {
+    grid-template-columns: 1fr 1fr 1fr !important;
+}
+
+form[name=product] button {
+    grid-template-columns:none!important;
+    margin-left: 200px;
+}
+form[name=shop] {
+    grid-template-columns: 3fr 1fr 1fr !important;
+}
+
 .result_product {
     display: grid;
-    grid-template-columns: 500px 200px 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     align-items: center;

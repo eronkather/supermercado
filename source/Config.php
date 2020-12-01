@@ -9,7 +9,7 @@ define("DATA_LAYER_CONFIG", [
     "port" => "5432",
     "dbname" => "postgres",
     "username" => "postgres",
-    "passwd" => "x4Mb5Ye8",
+    "passwd" => "",
     "options" => [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,

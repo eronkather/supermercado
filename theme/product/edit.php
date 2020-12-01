@@ -4,9 +4,11 @@
     <div class="form_ajax" style="display: none"></div>
     <form class="form" name="product" action="<?=$router->route('productcontroller.store')?>" method="post"
           enctype="multipart/form-data">
+        
         <label>
             <input type="text" name="description" placeholder="Descrição do Produto:"/>
         </label>
+        <input type="number" step="0.01" name="price" placeholder="Preço do Produto:"/>
         <label>
             <select class="select_tax" name="product_type_id" id="product_type_id">
                 <option value="">Selecione O Tipo de Produto</option>
@@ -115,12 +117,14 @@
             var div = $(this).parent();
             var description = div.find('.description').text();
             var productid = div.find('.product_type_id').text();
+            var price = parseInt(div.find('.price').text());
 
             
             $('button').data('id',$(this).data('id'));
             $('button').data('button','update');            
             $('button').html('Atualizar Produto');
             $("input[name=description]").val(description);
+            $("input[name=price]").val(price);
             $("select").val(parseInt(productid)).change();
 
             

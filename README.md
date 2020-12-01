@@ -31,5 +31,5 @@ psql -h localhost -U postgres -d supermercado < supermercado.backup
 
 ## Como rodar os testes
 ```bash
-./vendor/bin/phpunit --colors tests
+./vendor/bin/phpunit --color tests/ShopTest.php
 ```
