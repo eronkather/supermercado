@@ -43,10 +43,16 @@ body {
 
 .formProducts{
     overflow: auto;
+    padding-bottom: 50px;
 }
 .list{
     overflow: auto;
 }
+
+.formCheckout{
+    padding-bottom: 20px;
+}
+
 .ajax_load_box {
     margin: auto;
     text-align: center;
@@ -186,6 +192,8 @@ button:active{
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     align-items: center;
+    padding-bottom: 10px;
+
 }
 
 .taxes {

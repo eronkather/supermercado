@@ -35,7 +35,7 @@
     <form class="formProducts" name="shop" action="<?=$router->route('shopcontroller.checkout')?>" method="post"
           enctype="multipart/form-data">
 
-        <button data-button-insert data-id=''>Comprar</button>
+        <button class="btn-comprar" data-button-insert data-id=''>Comprar</button>
     </form>
 </div>
 
