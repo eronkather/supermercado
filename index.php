@@ -10,7 +10,7 @@ $router->namespace("source\Controllers");
 
 
 //Rotas da página inicial
-$router->get("/shop", "ShopController:home", "shopcontroller.home");
+$router->get("/", "ShopController:home", "shopcontroller.home");
 
 //Rotas dos Impostos
 
